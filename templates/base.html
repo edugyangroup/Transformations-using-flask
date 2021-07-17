@@ -1,0 +1,51 @@
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-6">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <title>DIP Praveen kumar(PGI18CS032)</title>
+</head>
+<body>
+    {% if message %}
+    <div class="alert alert-danger" role="alert">
+      {{message}}
+    </div>
+    {% endif %}
+    <div class="container mt-4">
+      <form action = "{{ url_for('transformation') }}" method = "POST">
+        <div class="form-group form-check">
+          <input type="file" class="form-file-input" id="image_file" name = "image_file">
+        </div>    
+        <div class="form-group form-check">
+          <p>Select Transformation</p>
+          <select class="form-control" name="operation">
+            <option name="scaling">Scaling</option>
+            <option name="rotation">Rotation</option>
+            <option name="translation">Translation</option>
+            <option name="reflaction">Reflaction</option>
+          </select>           
+        </div>   
+        <div class="form-group form-check">
+          <input type="text" class="form-input" id="width" name = "width">
+          <label class="form-check-label" for="exampleCheck1">Width</label>        
+        </div>        
+        <div class="form-group form-check">
+          <input type="text" class="form-input" id="width" name = "height">
+          <label class="form-check-label" for="exampleCheck1">Height</label>        
+        </div>                
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>    
+    </div>
+</body>
+</html>
